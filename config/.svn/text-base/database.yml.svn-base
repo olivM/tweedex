@@ -1,0 +1,7 @@
+development:
+  adapter: mysql
+  database: tweedex
+  username: root     
+  password: 
+  host: localhost
+

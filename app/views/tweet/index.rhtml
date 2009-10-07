@@ -1,0 +1,22 @@
+
+    <ul id="tweets">
+			<%
+			if ! @tweets.nil? and @tweets.length
+			@tweets.each do |tweet|
+			 	%><%=tweet.html%><%
+			end
+			end
+			%>
+    </ul>
+
+		<ul id="stats">
+		<%
+		@panel.tags.each do |tag|
+			%>
+			<li>
+			<img src="<%=tag.graph_url%>" />
+			</li>
+			<%
+		end
+		%>
+		</ul>

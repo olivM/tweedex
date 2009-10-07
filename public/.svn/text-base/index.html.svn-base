@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Tweedex</title>
+    <style type="text/css" media="screen">
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.timers.js"></script>
+    <script type="text/javascript">
+    jQuery(document).ready(function(){
+      var since = '';
+      getTweet = function() {
+        jQuery.getJSON('/tweet?since='+since,
+                      function(data) {
+                        jQuery.each(data, function(i, item) {
+                          since = Math.max(item.tweet.published_at, since);
+                          li = "<li>"+item.tweet.text+"</li>";
+                          //jQuery('#tweets li:first-child').before(li);
+                          jQuery('#tweets').prepend(li);
+                        });
+                      });
+      }
+      jQuery(document).oneTime(100, getTweet);
+      jQuery(document).everyTime(5000, getTweet);
+    });
+    </script>
+  </head>
+  <body>
+
+    <ul id="tweets">
+    </ul>
+
+  </body>
+</html>

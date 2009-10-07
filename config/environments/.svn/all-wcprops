@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/projects/!svn/ver/265/tweedex/config/environments
+END
+test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/projects/!svn/ver/265/tweedex/config/environments/test.rb
+END
+development.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/projects/!svn/ver/265/tweedex/config/environments/development.rb
+END
+production.rb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/projects/!svn/ver/265/tweedex/config/environments/production.rb
+END
