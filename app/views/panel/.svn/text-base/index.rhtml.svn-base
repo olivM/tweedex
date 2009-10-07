@@ -1,7 +1,0 @@
-<ul>
-<%
-@panels.each do |panel|
-  %><li><a href="/<%=panel.name%>"><%=panel.name%></a></li><%
-end
-%>
-</ul>
