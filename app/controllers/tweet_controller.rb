@@ -6,6 +6,7 @@ class TweetController < ApplicationController
   def index
     
     @panel = Panel.find_by_name(params[:panel])
+    @panel.fetch
 
     @tweets = @panel.tweets.find(:all, :limit => "25", :order => " timestamp desc").slice(10, 15)
     
